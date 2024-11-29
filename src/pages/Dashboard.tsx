@@ -77,7 +77,7 @@ const Dashboard = () => {
           } else {
             setIsLogged(true);
             setLoggedUser(res.data.user);
-            await getAllNotes();
+            getAllNotes();
           }
         }
       } catch (error) {
