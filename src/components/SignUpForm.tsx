@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 const initialValues = {
   name: "",
   email: "",
+  dob: "",
 };
 
 const signUpSchema = Yup.object().shape({
@@ -40,7 +41,7 @@ const SignUpForm = () => {
     validationSchema: signUpSchema,
     onSubmit: async (values) => {
       setIsLoading(true);
-      values.dob = selectedDate;
+      values.dob = selectedDate.toDateString();
       // console.log(values);
       setNewUser(values);
       try {
@@ -209,7 +210,7 @@ const SignUpForm = () => {
             </div>
           ) : null}
 
-          {isLoading ? (
+          {isLoading && !isError ? (
             <div className="flex justify-center w-full py-4 rounded-xl">
               <Loader />
             </div>

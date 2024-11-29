@@ -11,6 +11,7 @@ const Note = ({
   handleClick: () => void;
 }) => {
   const [isDelete, setIsDelete] = useState(false);
+  console.log(id);
 
   return (
     <div className="relative flex items-center justify-between w-full p-2 rounded-md shadow-custom shadow-slate-300">
